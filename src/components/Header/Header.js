@@ -3,11 +3,11 @@ import imgSrc from '../../assets/sushi.jpg';
 import styles from './Header.module.css';
 import HeaderCartButton from "./HeaderCartButton/HeaderCartButton";
 
-const Header = () => {
+const Header = (props) => {
     return <React.Fragment>
         <header className={styles.header}>
-            <h1>Yapona Shop</h1>
-            <HeaderCartButton/>
+            <h1>Yapona Food</h1>
+            <HeaderCartButton showModal={props.showModal}/>
         </header>
         <div className={styles['main-image']}>
             <img src={imgSrc} alt="Yapona shop header"/>
