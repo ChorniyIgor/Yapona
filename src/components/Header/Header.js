@@ -3,6 +3,7 @@ import imgSrc from '../../assets/sushi.jpg';
 import styles from './Header.module.css';
 import HeaderCartButton from "./HeaderCartButton/HeaderCartButton";
 
+
 const Header = (props) => {
     return <React.Fragment>
         <header className={styles.header}>

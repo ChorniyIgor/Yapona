@@ -18,3 +18,19 @@
   background-color: #47035d;
   border-color: #47035d;
 }
+
+.form button:disabled {
+  opacity: 0.2;
+  cursor: auto;
+}
+
+.form button:disabled:hover,
+.form button:disabled:active {
+  background-color: #6b068a;
+  border: 1px solid #6b068a;
+  color: white;
+}
+
+.input {
+  justify-content: flex-end;
+}

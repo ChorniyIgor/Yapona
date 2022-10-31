@@ -1,36 +1,49 @@
-import styles from './Cart.module.css';
+import { useContext } from "react";
+import CartContext from "../../store/cart-context";
+import styles from "./Cart.module.css";
+import CartItem from "./CartItem/CartItem";
 
 const Cart = (props) => {
+  const cartCtx = useContext(CartContext);
 
-    const cartItems = [    {
-        id: "m1",
-        name: 'Ролл "Наоми"',
-        description:
-          "Сыр Филадельфия, куриное филе, масаго, помидор, огурец, кунжут",
-        price: 11.99,
-      },
-      {
-        id: "m2",
-        name: "Спайс в лососе",
-        description: "Рис, лосось, соус спайс",
-        price: 3.99,
-      }]
+  const cartItems = cartCtx.items;
 
-    return <div>
-        <ul className={styles.cartItems}>
-          {cartItems.map(item => <li>{item.name}</li>)}
-        </ul>
+  const hasItems = cartItems.length !== 0;
 
-        <div className={styles.total}>
-            <span>Total</span>
-            <span>49.21</span>
-        </div>
+  const removeCartItemHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
 
-        <div className={styles.actions}>
-            <button className={styles['button--alt']} onClick={props.hideModal}>Close</button>
-            <button className={styles.button}>Order</button>
-        </div>
+  const addCartItemHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
+
+  return (
+    <div>
+      <ul className={styles["cart-items"]}>
+        {cartItems.map((item) => (
+          <CartItem
+            item={item}
+            key={item.id}
+            onRemove={removeCartItemHandler.bind(null, item.id)}
+            onAdd={addCartItemHandler.bind(null, item)}
+          />
+        ))}
+      </ul>
+
+      <div className={styles.total}>
+        <span>Total</span>
+        <span>{`$${cartCtx.totalAmount}`}</span>
+      </div>
+
+      <div className={styles.actions}>
+        <button className={styles["button--alt"]} onClick={props.hideModal}>
+          Close
+        </button>
+        {hasItems && <button className={styles.button}>Order</button>}
+      </div>
     </div>
-}
+  );
+};
 
 export default Cart;
