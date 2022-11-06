@@ -1,6 +1,6 @@
 # Yapona sushi
 
-This is an educational project developed as part of the [React.js Сourse 2022 Created by YouRa Allakhverdov](https://www.udemy.com/course/react-np/).
+This is an educational project developed as part of the [React.js Сourse 2022 by YouRa Allakhverdov](https://www.udemy.com/course/react-np/).
 
 ## Table of contents
 
