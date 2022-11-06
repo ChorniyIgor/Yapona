@@ -19,7 +19,7 @@ This is an educational project developed as part of the [React.js Сourse 2022](
 
 ### Link
 
-- Live Site URL: [todo.igorc.site](https://todo.igorc.site/)
+- Live Site URL: [yapona.igorc.site](https://yapona.igorc.site/)
 
 ### Built with
 
