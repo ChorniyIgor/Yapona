@@ -1,0 +1,24 @@
+.LoaderContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.Loader {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%, #6b068ae8);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner-zp9dbg 1s infinite linear;
+}
+
+body[data-theme="dark"] .Loader {
+  background: conic-gradient(#0000 10%, #e7e7ee);
+}
+
+@keyframes spinner-zp9dbg {
+  to {
+    transform: rotate(1turn);
+  }
+}

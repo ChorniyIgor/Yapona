@@ -1,0 +1,30 @@
+.Button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #6b068a;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+
+.Button {
+  background-color: #6b068a;
+  color: white;
+}
+
+.Button:hover,
+.Button:active {
+  background-color: #47035d;
+  border-color: #47035d;
+  color: white;
+}
+.Button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ButtonAlt {
+  color: #6b068a;
+  background: white;
+}

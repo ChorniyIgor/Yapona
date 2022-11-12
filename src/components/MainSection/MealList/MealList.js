@@ -1,48 +1,28 @@
-import Card from '../../../UI/Card/Card';
-import MealItem from './MealItem/MealItem';
-import styles from './MealList.module.css';
-
-const DUMMY_MEALS = [
-    {
-      id: "m1",
-      name: 'Ролл "Наоми"',
-      description:
-        "Сыр Филадельфия, куриное филе, масаго, помидор, огурец, кунжут",
-      price: 11.99,
-    },
-    {
-      id: "m2",
-      name: "Спайс в лососе",
-      description: "Рис, лосось, соус спайс",
-      price: 3.99,
-    },
-    {
-      id: "m3",
-      name: "Суши с угрем",
-      description: "Угорь копченый, соус унаги, кунжут",
-      price: 4.99,
-    },
-    {
-      id: "m4",
-      name: 'Салат "Поке с лососем"',
-      description:
-        "Рис, лосось, огурец, чука, нори, стружка тунца, соус ореховый",
-      price: 7.99,
-    },
-  ];
-  
+import useDishes from "../../../hooks/useDishes";
+import Card from "../../../UI/Card/Card";
+import MealItem from "./MealItem/MealItem";
+import Loader from "../../../UI/Loader/Loader";
+import Error from "../../../UI/Error/Error";
+import styles from "./MealList.module.css";
 
 const MealList = () => {
+  const { result: dishesList, isLoading, isError } = useDishes();
 
-    const mealList = DUMMY_MEALS.map(meal => <MealItem key={meal.id} meal={meal} />);
+  const mealList = dishesList.map((meal) => (
+    <MealItem key={meal.id} meal={meal} />
+  ));
 
-    return <section className={styles.meals}>
+  return (
+    <section className={styles.meals}>
+      {isLoading && <Loader />}
+      {isError && <Error>Сan't load meals</Error>}
+      {!isLoading && !isError && !!dishesList.length && (
         <Card>
-        <ul>
-            {mealList}
-        </ul>
+          <ul>{mealList}</ul>
         </Card>
+      )}
     </section>
-}
+  );
+};
 
 export default MealList;

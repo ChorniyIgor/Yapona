@@ -63,6 +63,13 @@ const cartReducer = (prevState, action) => {
       totalAmount,
     };
   }
+  if (action.type === "REMOVE_ALL_ITEMS_FROM_CART") {
+    return {
+      ...prevState,
+      items: [],
+      totalAmount: 0,
+    };
+  }
 
   return { ...prevState };
 };
@@ -82,6 +89,12 @@ const CartContextProvider = (props) => {
     });
   };
 
+  const removeAllItems = () => {
+    dispatchCartState({
+      type: "REMOVE_ALL_ITEMS_FROM_CART",
+    });
+  };
+
   const [cartState, dispatchCartState] = useReducer(cartReducer, {
     items: [],
     totalAmount: 0,
@@ -92,6 +105,7 @@ const CartContextProvider = (props) => {
     totalAmount: cartState.totalAmount,
     addItem,
     removeItem,
+    removeAllItems,
   };
 
   return (
