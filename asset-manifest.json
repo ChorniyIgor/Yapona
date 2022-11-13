@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Job-listings-with-filtering/static/css/main.fdfa8b04.css",
-    "main.js": "/Job-listings-with-filtering/static/js/main.a6b4bc02.js",
-    "static/js/787.62d4d43c.chunk.js": "/Job-listings-with-filtering/static/js/787.62d4d43c.chunk.js",
-    "static/media/sushi.jpg": "/Job-listings-with-filtering/static/media/sushi.a2b4b921ab28b2b3f6c7.jpg",
-    "index.html": "/Job-listings-with-filtering/index.html",
-    "main.fdfa8b04.css.map": "/Job-listings-with-filtering/static/css/main.fdfa8b04.css.map",
-    "main.a6b4bc02.js.map": "/Job-listings-with-filtering/static/js/main.a6b4bc02.js.map",
-    "787.62d4d43c.chunk.js.map": "/Job-listings-with-filtering/static/js/787.62d4d43c.chunk.js.map"
+    "main.css": "/yapona/static/css/main.fdfa8b04.css",
+    "main.js": "/yapona/static/js/main.cb0ebbb9.js",
+    "static/js/787.62d4d43c.chunk.js": "/yapona/static/js/787.62d4d43c.chunk.js",
+    "static/media/sushi.jpg": "/yapona/static/media/sushi.a2b4b921ab28b2b3f6c7.jpg",
+    "index.html": "/yapona/index.html",
+    "main.fdfa8b04.css.map": "/yapona/static/css/main.fdfa8b04.css.map",
+    "main.cb0ebbb9.js.map": "/yapona/static/js/main.cb0ebbb9.js.map",
+    "787.62d4d43c.chunk.js.map": "/yapona/static/js/787.62d4d43c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fdfa8b04.css",
-    "static/js/main.a6b4bc02.js"
+    "static/js/main.cb0ebbb9.js"
   ]
 }
