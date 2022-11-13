@@ -14,7 +14,6 @@ const Cart = (props) => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const cartItems = cartCtx.items;
-
   const hasItems = cartItems.length !== 0;
 
   const removeCartItemHandler = (id) => {
@@ -41,8 +40,10 @@ const Cart = (props) => {
     setIsLoading(true);
     const result = await fetch(
       "https://rn-todo-fc0cb-default-rtdb.europe-west1.firebasedatabase.app/yapona/orders.json",
+
       {
         method: "POST",
+        headers: "Content-Type: application/json",
         body: JSON.stringify(data),
       }
     );
